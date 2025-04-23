@@ -1,0 +1,92 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+h1 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#html-input {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: monospace;
+    resize: vertical;
+}
+
+
+#extraer-imagenes {
+    background-color: #e4a6c4;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+#extraer-imagenes:hover {
+    background-color: #ba90b4;
+}
+
+#resultado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.urls-title,
+.gallery-title {
+    color: #000;
+    border-bottom: 2px solid #e4a6c4;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.gallery-title {
+    margin-top: 2rem;
+}
+
+.urls-list {
+    margin: 1rem 0;
+}
+
+.url-item {
+    margin: 0.5rem 0;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.grid-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

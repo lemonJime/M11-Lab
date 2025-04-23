@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contenedor-formulario {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #e4a6c4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ba90b4;
+}
+
+#muestraDatos {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#muestraDatos p {
+    margin: 12px 0;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-left: 3px solid #e4a6c4;
+    border-radius: 4px;
+}
+
+.valido {
+    color: #27ae60; 
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.invalido {
+    color: #e74c3c; 
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+
+#muestraDatos p {
+    margin: 12px 0;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-left: 3px solid #e4a6c4;
+    border-radius: 4px;
+}

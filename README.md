@@ -1,11 +1,9 @@
-# typescript-sandbox
+# Entrega del Laboratorio 11
 
-Para la parte de cada módulo en la que te planteamos ejercicios con JavaScript puedes usar este sandbox.
 
-Pasos:
+## Apartado A
+<img src="./src/content/images/apartadoA.png" alt="Captura de la web" title="Captura de la web" />
 
-- Clonate el proyecto.
-- Instala las dependencias con `npm install`.
-- Ejecuta el sandbox con `npm run dev`.
-- Abre el navegador en `http://localhost:5173/` (si ese puerto no te funciona, mira en la consola donde has hecho el build, puede que este ocupado y se haya abierto en otro puerto).
-- Puedes empezar a meter tu código en el fichero:
+
+## Apartado B
+<img src="./src/content/images/apartadoB.png" alt="Captura de la web" title="Captura de la web" />
