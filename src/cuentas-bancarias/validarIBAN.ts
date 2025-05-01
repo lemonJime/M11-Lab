@@ -3,13 +3,8 @@ import { datosIBANBanco } from "./validarIBAN.model";
 import { codigosYBancos, formatoValido } from "./constantes";
 
 
-export const leerIBAN = (cuentaBancaria: string): boolean => {
-    
-    if (formatoValido.test(cuentaBancaria)) {
-        return true;
-    } else {
-        return false;
-    }
+const leerIBAN = (cuentaBancaria: string): boolean => {
+    return formatoValido.test(cuentaBancaria);
 }
 
 export const esValidoIBAN = (iban: string): boolean => {
@@ -20,17 +15,17 @@ export const esValidoIBAN = (iban: string): boolean => {
     return isValidIBAN(ibanLimpio);
 }
 
-export const extraerDatosIBAN = (iban : string) : datosIBANBanco => {
+export const extraerDatosIBAN = (iban: string): datosIBANBanco => {
     const ibanLimpio = iban.replace(/[\s-_]/g, '');
     const comprobaciones = formatoValido.exec(ibanLimpio);
     // console.log("comprobaciones: ", comprobaciones);
     // console.log("comprobaciones.groups: ", comprobaciones?.groups);
 
-    if(!comprobaciones?.groups){
+    if (!comprobaciones?.groups) {
         throw new Error("Formato de IBAN inválido...");
     }
     const { codigoPais, digitoControl, codigoBanco, codigoSucursal, digitoControl2, numeroCuenta } = comprobaciones.groups;
-    
+
     return {
         nombre_banco: codigosYBancos[codigoBanco as keyof typeof codigosYBancos],
         codigo_pais: codigoPais,
@@ -41,5 +36,3 @@ export const extraerDatosIBAN = (iban : string) : datosIBANBanco => {
         numero_cuenta: numeroCuenta
     };
 }
-
-

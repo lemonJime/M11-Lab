@@ -9,4 +9,3 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error ('No se encontró el formulario')
     }
 });
-

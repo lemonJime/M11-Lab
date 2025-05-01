@@ -1,9 +1,60 @@
 import { extraerURLsImagenes } from './extraerURLs';
 
-export const mostrarImagenes = () => {
+const obtenerElementos = () => {
     const button = document.getElementById('extraer-imagenes') as HTMLButtonElement;
     const textarea = document.getElementById('html-input') as HTMLTextAreaElement;
     const resultadoContainer = document.getElementById('resultado') as HTMLDivElement;
+    return { button, textarea, resultadoContainer };
+}
+
+const crearSeccionURLs = (urls: string[]): HTMLElement => {
+    const seccion = document.createElement('div');
+
+    const titulo = document.createElement('h4');
+    titulo.textContent = 'Listado de URLs de recursos';
+    titulo.classList.add('urls-title');
+
+    const lista = document.createElement('div');
+    lista.classList.add('urls-list');
+
+    urls.forEach(url => {
+        const item = document.createElement('p');
+        item.textContent = url;
+        item.classList.add('url-item');
+        lista.appendChild(item);
+    });
+
+    seccion.appendChild(titulo);
+    seccion.appendChild(lista);
+
+    return seccion;
+}
+
+const crearSeccionGaleria = (urls: string[]): HTMLElement => {
+    const seccion = document.createElement('div');
+
+    const titulo = document.createElement('h4');
+    titulo.textContent = 'Galería de imágenes';
+    titulo.classList.add('gallery-title');
+
+    const grid = document.createElement('div');
+    grid.classList.add('image-grid');
+
+    urls.forEach(url => {
+        const img = document.createElement('img');
+        img.src = url;
+        img.classList.add('grid-image');
+        grid.appendChild(img);
+    });
+
+    seccion.appendChild(titulo);
+    seccion.appendChild(grid);
+
+    return seccion;
+}
+
+export const mostrarImagenes = () => {
+    const { button, textarea, resultadoContainer } = obtenerElementos();
 
     button.addEventListener('click', () => {
         const html = textarea.value;
@@ -12,42 +63,14 @@ export const mostrarImagenes = () => {
         resultadoContainer.innerHTML = '';
 
         if (urls.length === 0) {
-            resultadoContainer.textContent = 'No se encontraron imágenes.';
+            resultadoContainer.textContent = 'No se encontraron imágenes.🤷‍♀️';
             return;
         }
 
-        // Crear sección de listado de URLs
-        const urlsTitulo = document.createElement('h4');
-        urlsTitulo.textContent = 'Listado de URLs de recursos';
-        urlsTitulo.classList.add('urls-title');
-        
-        const listaURLs = document.createElement('div');
-        listaURLs.classList.add('urls-list');
-        urls.forEach(url => {
-            const urlElemento = document.createElement('p');
-            urlElemento.textContent = url;
-            urlElemento.classList.add('url-item');
-            listaURLs.appendChild(urlElemento);
-        });
+        const seccionURLs = crearSeccionURLs(urls);
+        const seccionGaleria = crearSeccionGaleria(urls);
 
-        // Crear sección de galería
-        const tituloGaleria = document.createElement('h4');
-        tituloGaleria.textContent = 'Galería de imágenes';
-        tituloGaleria.classList.add('gallery-title');
-
-        const grid = document.createElement('div');
-        grid.classList.add('image-grid');
-        urls.forEach(url => {
-            const imgElemento = document.createElement('img');
-            imgElemento.src = url;
-            imgElemento.classList.add('grid-image');
-            grid.appendChild(imgElemento);
-        });
-
-        // Añadir todo al contenedor
-        resultadoContainer.appendChild(urlsTitulo);
-        resultadoContainer.appendChild(listaURLs);
-        resultadoContainer.appendChild(tituloGaleria);
-        resultadoContainer.appendChild(grid);
+        resultadoContainer.appendChild(seccionURLs);
+        resultadoContainer.appendChild(seccionGaleria);
     });
-}
+};
